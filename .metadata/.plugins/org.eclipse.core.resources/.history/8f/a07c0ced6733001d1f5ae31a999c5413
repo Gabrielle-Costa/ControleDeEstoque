@@ -41,6 +41,17 @@ public class Programa {
 			System.out.println("Erro: " + e.getStackTrace());
 		}
 		
+		
+			
+		
+		
+		
+		System.out.println(prod);
+		
+
+		
+		
+		
 		sc.close();
 
 	}

@@ -43,12 +43,7 @@ public class Produto {
 	public Double getPreco() {
 		return preco;
 	}
-
-	public Set<Produto> getSet() {
-		return set;
-	}
-
-
+	
 	public void addSet(Produto produto) {
 		
 		set.add(produto);
@@ -95,16 +90,5 @@ public class Produto {
 			System.out.println("Erro: " + e.getStackTrace());
 		}
 	}
-
-	@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder();
-         for(Produto p: set) {
-			sb.append("Produto: " + p.getNome() + ", quantidade: " + p.getQuantidade() + ", preço: R$" + String.format("%.2f", p.getPreco()) + "\n");
-		}
-		return sb.toString();
-	}
-	
-	
 
 }

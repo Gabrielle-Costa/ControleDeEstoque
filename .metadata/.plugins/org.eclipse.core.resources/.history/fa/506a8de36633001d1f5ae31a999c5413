@@ -2,8 +2,10 @@ package application;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.HashSet;
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.Set;
 
 import entities.Produto;
 
@@ -13,9 +15,9 @@ public class Programa {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-
+		//Set<Produto> setProd = new HashSet<>();
 		Produto prod = new Produto();
-
+		
 		System.out.print("Caminho do arquivo: ");
 		String file = sc.nextLine();
 		
@@ -29,7 +31,7 @@ public class Programa {
 						Double preco = Double.parseDouble(vec[2]);
 						
 						prod.addSet(new Produto(nome,quantidade,preco));	
-
+						//setProd.add(new Produto(nome,quantidade,preco));
 						
 						linha = br.readLine();
 					}
@@ -40,6 +42,19 @@ public class Programa {
 		}catch (Exception e) {
 			System.out.println("Erro: " + e.getStackTrace());
 		}
+		
+		System.out.print("Deseja importar outro arquivo (y/n)? ");
+		char imp = sc.next().charAt(0);
+		
+		System.out.println();
+		System.out.println(prod);
+		
+		
+		/*for(Produto prod: setProd) {
+			System.out.println("Produto: " + prod.getNome() + ", quantidade: " + prod.getQuantidade() + ", preço: R$" + String.format("%.2f", prod.getPreco()));
+		}*/
+		
+		
 		
 		sc.close();
 

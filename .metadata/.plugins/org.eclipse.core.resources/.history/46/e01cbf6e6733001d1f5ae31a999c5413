@@ -15,7 +15,7 @@ public class Programa {
 		
 
 		Produto prod = new Produto();
-
+		
 		System.out.print("Caminho do arquivo: ");
 		String file = sc.nextLine();
 		
@@ -40,6 +40,16 @@ public class Programa {
 		}catch (Exception e) {
 			System.out.println("Erro: " + e.getStackTrace());
 		}
+		
+		System.out.print("Deseja importar outro arquivo (y/n)? ");
+		char imp = sc.next().charAt(0);
+		
+		System.out.println();
+		System.out.println(prod);
+		
+
+		
+		
 		
 		sc.close();
 

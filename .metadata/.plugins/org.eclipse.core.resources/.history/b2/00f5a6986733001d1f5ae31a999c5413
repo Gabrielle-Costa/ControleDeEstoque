@@ -15,10 +15,11 @@ public class Programa {
 		
 
 		Produto prod = new Produto();
-
+		char imp;
+		
 		System.out.print("Caminho do arquivo: ");
 		String file = sc.nextLine();
-		
+		do {
 		try(BufferedReader br = new BufferedReader(new FileReader(file))){
 			
 			String linha = br.readLine();
@@ -40,6 +41,22 @@ public class Programa {
 		}catch (Exception e) {
 			System.out.println("Erro: " + e.getStackTrace());
 		}
+		
+		System.out.print("Deseja importar outro arquivo (y/n)? ");
+		imp = sc.next().charAt(0);
+		
+		}while (imp == 'y' || imp == 'Y');
+		System.out.println();
+		
+			
+		
+		
+		
+		System.out.println(prod);
+		
+
+		
+		
 		
 		sc.close();
 
